@@ -5,7 +5,7 @@ export default {
         name: 'MRF Kashmir Willow Cricket Bat',
         category: 'Bats',
         image: '/img/mrf1.jpg',
-        price: 1200,
+        price: 1250,
         brand: 'MRF',
         rating: 4.5,
         numReviews: 10,
