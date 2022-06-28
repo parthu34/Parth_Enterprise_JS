@@ -147,5 +147,21 @@ p.copyright {
   transition-delay: .2s;
 }
 
+/* products style */
 
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
 
+.products li {
+  flex: 0 1 30 rem;
+  margin: 1 rem;
+  margin-bottom: 0;
+  height: 42rem;
+  border-top: 0.2 rem #e0e0e0 solid;
+}
