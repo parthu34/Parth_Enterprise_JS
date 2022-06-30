@@ -1,7 +1,7 @@
 export default {
   products: [
     {
-      _id: '1',
+      _id: '111111111111111111111111',
       name: 'MRF Kashmir Willow Cricket Bat',
       category: 'Bats',
       image: '/img/mrf1.jpg',
@@ -12,7 +12,7 @@ export default {
       countInStock: 6,
     },
     {
-      _id: '2',
+      _id: '222222222222222222222222',
       name: 'GM English Willow Cricket Bat',
       category: 'Bats',
       image: '/img/gm2.jpg',
@@ -23,7 +23,7 @@ export default {
       countInStock: 10,
     },
     {
-      _id: '3',
+      _id: '333333333333333333333333',
       name: 'Nivia Cricket Tennis Ball',
       category: 'Balls',
       image: '/img/ten_nivia.jpg',
@@ -34,7 +34,7 @@ export default {
       countInStock: 50,
     },
     {
-      _id: '4',
+      _id: '444444444444444444444444',
       name: 'TON Kashmir Willow Cricket Bat',
       category: 'Bats',
       image: '/img/ton1.jpg',
@@ -45,7 +45,7 @@ export default {
       countInStock: 15,
     },
     {
-      _id: '5',
+      _id: '555555555555555555555555',
       name: 'Guru Cricket Tennis Ball',
       category: 'Balls',
       image: '/img/tennis_guru.jpg',
@@ -56,7 +56,7 @@ export default {
       countInStock: 40,
     },
     {
-      _id: '6',
+      _id: '666666666666666666666666',
       name: 'SG English Willow Cricket Bat',
       category: 'Bats',
       image: '/img/sg1.jpg',
