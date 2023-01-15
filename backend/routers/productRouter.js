@@ -4,6 +4,20 @@ import Product from "../models/productModel";
 import {isAuth, isAdmin} from '../utils'
 
 const productRouter = express.Router();
+productRouter.get(
+    '/',
+    expressAysncHandler(async (req, res) => {
+      const products = await Product.find({});
+      res.send(products);
+    })
+  );
+  productRouter.get(
+    '/:id',
+    expressAysncHandler(async (req, res) => {
+      const product = await Product.findById(req.params.id);
+      res.send(product);
+    })
+  );
 productRouter.post(
   '/',
   isAuth,
