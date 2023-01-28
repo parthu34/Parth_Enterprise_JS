@@ -28,13 +28,13 @@ app.use('/api/users', userRouter);
 app.use('/api/uploads', uploadRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
+app.get('/api/paypal/clientId', (req, res) => {
+  res.send({ clientId: config.PAYPAL_CLIENT_ID });
+});
 app.use('/uploads', express.static(path.join(__dirname, '/../uploads')));
 app.use(express.static(path.join(__dirname, '/../front-end')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/../front-end/index.html'));
-});
-app.get('/api/paypal/clientId', (req, res) => {
-  res.send({ clientId: config.PAYPAL_CLIENT_ID });
 });
 
 app.use((err, req, res, next) => {
