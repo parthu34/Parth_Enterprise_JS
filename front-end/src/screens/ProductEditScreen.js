@@ -4,7 +4,7 @@ import {
     showMessage,
     hideLoading,
   } from '../utils';
-  import { getProduct, updateProduct } from '../api';
+  import { getProduct, updateProduct, uploadProductImage } from '../api';
   
   const ProductEditScreen = {
     after_render: () => {
@@ -31,6 +31,22 @@ import {
             document.location.hash = '/productlist';
           }
         });
+        document
+        .getElementById('image-file')
+        .addEventListener('change', async (e) => {
+          const file = e.target.files[0];
+          const formData = new FormData();
+          formData.append('image', file);
+          showLoading();
+          const data = await uploadProductImage(formData);
+          hideLoading();
+          if (data.error) {
+            showMessage(data.error);
+          } else {
+            showMessage('Image uploaded successfully.');
+            document.getElementById('image').value = data.image;
+          }
+        });
     },
     render: async () => {
       const request = parseRequestUrl();
@@ -54,29 +70,30 @@ import {
               </li>
               <li>
                 <label for="price">Price</label>
-                <input type="number" name="price" value="${
-                  product.price
-                }" id="price" />
-              </li>
-              <li>
-                <label for="image">Image (680 x 830)</label>
-                <input type="text" name="image" value="${
-                  product.image
-                }" id="image" />
-              </li>
-              <li>
-                <label for="brand">Brand</label>
-                <input type="text" name="brand" value="${
-                  product.brand
-                }" id="brand" />
-              </li>
-              <li>
-                <label for="countInStock">Count In Stock</label>
-                <input type="text" name="countInStock" value="${
-                  product.countInStock
-                }" id="countInStock" />
-              </li>
-              <li>
+                  <input type="number" name="price" value="${
+                    product.price
+                  }" id="price" />
+                </li>
+                <li>
+                  <label for="image">Image (680 x 830)</label>
+                  <input type="text" name="image" value="${
+                    product.image
+                  }" id="image" />
+                  <input type="file" name="image-file" id="image-file" />
+                </li>
+                <li>
+                  <label for="brand">Brand</label>
+                  <input type="text" name="brand" value="${
+                    product.brand
+                  }" id="brand" />
+                </li>
+                <li>
+                  <label for="countInStock">Count In Stock</label>
+                  <input type="text" name="countInStock" value="${
+                    product.countInStock
+                  }" id="countInStock" />
+                </li>
+                <li>
                 <label for="category">Category</label>
                 <input type="text" name="category" value="${
                   product.category

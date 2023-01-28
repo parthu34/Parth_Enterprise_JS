@@ -28,7 +28,7 @@ productRouter.post(
       description: 'sample desc',
       category: 'sample category',
       brand: 'sample brand',
-      image: '/images/product-1.jpg',
+      image: '/img/sg.jpg',
     });
     const createdProduct = await product.save();
     if (createdProduct) {
