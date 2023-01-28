@@ -33,12 +33,6 @@ const ProductScreen = {
                 <h1>${product.name}</h1>
               </li>
               <li>
-              ${Rating.render({
-                value: product.rating,
-                text: `${product.numReviews} reviews`,
-              })}
-              </li>
-              <li>
                 Price: <strong>₹${product.price}</strong>
               </li>
               <li>
