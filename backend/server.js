@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import path from 'path';
 import config from './config';
 import userRouter from './routers/userRoute';
 import orderRouter from './routers/orderRouter';
@@ -24,9 +25,14 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/users', userRouter);
-app.use('/api/uploads', uploadRouter)
+app.use('/api/uploads', uploadRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
+app.use('/uploads', express.static(path.join(__dirname, '/../uploads')));
+app.use(express.static(path.join(__dirname, '/../front-end')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../front-end/index.html'));
+});
 app.get('/api/paypal/clientId', (req, res) => {
   res.send({ clientId: config.PAYPAL_CLIENT_ID });
 });
