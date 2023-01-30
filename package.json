@@ -41,5 +41,9 @@
     "eslint-plugin-import": "^2.26.0",
     "gh-pages": "^4.0.0",
     "nodemon": "^2.0.18"
+  },
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
   }
 }
