@@ -541,36 +541,30 @@ td {
 }  
 
 /* search */
+
 .search {
-  display: flex;
-  align-items: center;
-  width: 16%;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  overflow: hidden;
+  width: 40%;
 }
-
 form.search-form input[type='text'] {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  background-color: #f5f5f5;
+  float: left;
+  width: 50%;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-
 form.search-form button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  font-size: 16px;
+  float: left;
+  width: 40px;
+  background: #3068d0;
+
+  border-left: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
-
 form.search-form button:hover {
-  background-color: #3e8e41;
+  background: #0b7dda;
 }
-
 /* Clear floats */
 form.search-form::after {
   content: '';
