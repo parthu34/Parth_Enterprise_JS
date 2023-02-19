@@ -14,6 +14,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import SigninScreen from './screens/SigninScreen';
+import Aside from './components/Aside';
 import { hideLoading, parseRequestUrl, showLoading } from './utils';
 
 const routes = {
@@ -44,6 +45,9 @@ const router = async () => {
   const header = document.getElementById('header-container');
   header.innerHTML = await Header.render();
   await Header.after_render();
+  const aside = document.getElementById('aside-container');
+  aside.innerHTML = await Aside.render();
+  await Aside.after_render();
   const main = document.getElementById('main-container');
   main.innerHTML = await screen.render();
   if (screen.after_render) await screen.after_render();
